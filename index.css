@@ -90,39 +90,54 @@ hr {
 /* Hero Section */
 .hero {
   width: 100%;
-  height: auto;
-  background-image: url(./images/mainfoto.jpg);
-  background-size: cover;
+  background-image: url(https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: 100% 100% ;
   background-repeat: no-repeat;
   height: 650px;
+  background-position: center;
   position: relative; /* Allow absolute positioning of child elements */
 }
 
 .hero-text {
   position: relative;
   max-width: 600px;
-  left: 600px;
-  top: 200px;
+  right: 20px;
 }
 
 .hero h1 {
   font-size: 4rem;
-  margin-bottom: 20px;
+  margin-top: 20px;
   line-height: 4rem;
-  color: #fff;
+  color: black;
 }
 
-.hero button {
-  background-color: transparent;
-  border: 1px solid white;
-  padding: 10px 50px;
+/* From Uiverse.io by mrhyddenn */ 
+.shadow__btn {
+  padding: 10px 20px;
   margin-left: 430px;
-  margin-top: 40px;
+  margin-top: 20px;
+  border: none;
+  font-size: 17px;
   color: #fff;
+  border-radius: 7px;
+  cursor: pointer;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
 }
 
-.hero p {
-  font-size: 1.5rem;
+.shadow__btn {
+  background: rgb(0,140,255);
+  box-shadow: 0 0 25px rgb(0,140,255);
+}
+
+.shadow__btn:hover {
+  box-shadow: 0 0 5px rgb(0,140,255),
+              0 0 25px rgb(0,140,255),
+              0 0 50px rgb(0,140,255),
+              0 0 100px rgb(0,140,255);
 }
 
 
@@ -132,8 +147,6 @@ hr {
   background-color:white;
   overflow: hidden;
 }
-
-
 
 .icons {
   position: absolute;
@@ -163,13 +176,14 @@ hr {
 
 .card {
   background-color: white;
-  width: 250px;
+  width: 100%;
+  height: auto;
   text-align: center;
 }
 
 .card img {
-  width: 109%;
-  height: 260px;
+  width: 100%;
+  height: 220px;
 }
 
 .card h3 {
