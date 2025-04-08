@@ -145,7 +145,7 @@ hr {
 #services {
   position: relative; 
   background-color:white;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .icons {
@@ -156,27 +156,26 @@ hr {
   gap: 10px;
 }
 
-/*.slide {
-  min-width: 100%;  Each slide takes full width 
-  transition: transform 0.5s ease; Smooth transition for sliding 
-  display: none;  Hide all slides by default 
-}*/
-
-/*.slide.active {
-  display: block;  Show the active slide 
-}*/
-
-
-.service-cards {
+.carousel-container {
+  overflow: hidden;
+  position: relative;
   width: 100%;
+}
+
+#carouselTrack {
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  width: 100%;
+  height: auto;
 }
 
 .card {
   background-color: white;
-  width: 100%;
+  width: 200px;
   height: auto;
   text-align: center;
 }
