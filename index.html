@@ -259,11 +259,15 @@
       let slideIndex = 0;
       const slides = document.querySelectorAll(".slide");
       const totalSlides = slides.length;
-      const slideWidth = slides[0].offsetWidth + 70; // slide width + gap
+      console.log(totalSlides);
+      const slideWidth = slides[0].offsetWidth - totalSlides; // slide width + gap
 
       nextBtn.addEventListener("click", () => {
-        if (slideIndex < totalSlides - 1) {
+        if (slideIndex < totalSlides - 3) {
           slideIndex++;
+          updateCarousel();
+        } else {
+          slideIndex = 0;
           updateCarousel();
         }
       });
@@ -271,6 +275,9 @@
       prevBtn.addEventListener("click", () => {
         if (slideIndex > 0) {
           slideIndex--;
+          updateCarousel();
+        } else {
+          slideIndex = 0;
           updateCarousel();
         }
       });
