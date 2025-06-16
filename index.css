@@ -158,6 +158,24 @@ hr {
   gap: 10px;
 }
 
+#leftButton {
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+#leftButton:hover {
+  background-color: #868a92;
+}
+
+#rightButton {
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+#rightButton:hover {
+  background-color: #868a92;
+}
+
 .carousel-container {
   overflow: hidden;
   /* position: relative; */
