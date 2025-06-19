@@ -197,6 +197,30 @@
         </div>
       </section>
 
+      <section id="carousel-2">
+        <div class="carousel">
+          <div class="card-container">
+            <div class="card-2">1</div>
+            <div class="card-2">2</div>
+            <div class="card-2">3</div>
+            <div class="card-2">4</div>
+            <div class="card-2">5</div>
+            <div class="card-2">6</div>
+            <div class="card-2">7</div>
+            <div class="card-2">8</div>
+            <div class="card-2">9</div>
+            <div class="card-2">10</div>
+            <div class="card-2">11</div>
+            <div class="card-2">12</div>
+            <div class="card-2">13</div>
+            <div class="card-2">14</div>
+            <div class="card-2">15</div>
+          </div>
+          <button class="button" id="button-back">⬅</button>
+          <button class="button" id="button-next">➡</button>
+        </div>
+      </section>
+
       <section id="contact">
         <h2>Contact Us</h2>
         <form>
@@ -292,6 +316,45 @@
         // Update width in case window resizes
         updateCarousel();
       });
+
+      // slider section 2
+
+      const buttonBack = document.querySelector("#button-back");
+      const buttonNext = document.querySelector("#button-next");
+      const listOfCardElements = document.querySelectorAll(".card-2");
+      const cardElement = document.querySelector(".card-2");
+      const cardContainer = document.querySelector(".card-container");
+      let currentCard = 0;
+
+      function setScrollTo() {
+        const scrollLeft = currentCard * listOfCardElements[0].offsetWidth;
+        cardContainer.scrollTo({ left: scrollLeft, behavior: "smooth" });
+      }
+
+      buttonBack.addEventListener("click", () => {
+        if (currentCard > 0) {
+          // currentCard--;
+          currentCard = 0;
+        }
+        setScrollTo();
+      });
+
+      buttonNext.addEventListener("click", () => {
+        if (currentCard < listOfCardElements.length - 1) {
+          currentCard++;
+        }
+        setScrollTo();
+      });
+
+      listOfCardElements.forEach((cardElement, index) => {
+        cardElement.addEventListener("click", () => {
+          currentCard = index;
+          const scrollLeft = currentCard * listOfCardElements[0].offsetWidth;
+          cardContainer.scrollTo({ left: scrollLeft, behavior: "smooth" });
+        });
+      });
+
+      // slider section 2
     </script>
   </body>
 </html>
