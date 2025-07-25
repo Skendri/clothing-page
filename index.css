@@ -28,7 +28,7 @@ nav ul {
 
 nav ul li {
   margin: 0 15px;
- 
+
 }
 
 nav ul li a {
@@ -93,11 +93,12 @@ hr {
 .hero {
   width: 100%;
   background-image: url(https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  background-size: 100% 100% ;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 650px;
   background-position: center;
-  position: relative; /* Allow absolute positioning of child elements */
+  position: relative;
+  /* Allow absolute positioning of child elements */
 }
 
 .hero-text {
@@ -113,7 +114,7 @@ hr {
   color: black;
 }
 
-/* From Uiverse.io by mrhyddenn */ 
+/* From Uiverse.io by mrhyddenn */
 .shadow__btn {
   padding: 10px 20px;
   margin-left: 430px;
@@ -131,22 +132,23 @@ hr {
 }
 
 .shadow__btn {
-  background: rgb(0,140,255);
-  box-shadow: 0 0 25px rgb(0,140,255);
+  background: rgb(0, 140, 255);
+  box-shadow: 0 0 25px rgb(0, 140, 255);
 }
 
 .shadow__btn:hover {
-  box-shadow: 0 0 5px rgb(0,140,255),
-              0 0 25px rgb(0,140,255),
-              0 0 50px rgb(0,140,255),
-              0 0 100px rgb(0,140,255);
+  box-shadow: 0 0 5px rgb(0, 140, 255),
+    0 0 25px rgb(0, 140, 255),
+    0 0 50px rgb(0, 140, 255),
+    0 0 100px rgb(0, 140, 255);
 }
 
 
 /* Services Section */
 #services {
-  position: relative; 
-  background-color:white;
+  position: relative;
+  background-color: white;
+  margin: 5% 2%;
   /* overflow: hidden; */
 }
 
@@ -220,37 +222,92 @@ hr {
 
 
 /* About Section */
-section {
-  width: 100%;
-  padding: 60px 20px;
+
+#about {
+  margin: 5% 2%;
+}
+
+.hover-box {
+  width: 200px;
+  height: 100px;
+  background-color: lightgray;
   text-align: center;
+  line-height: 100px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  /* Ensure that the list is hidden inside */
 }
 
- .container {
+.hover-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  /* Position the list inside the box */
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
   width: 100%;
-  display: flex;
+  display: block;
+  /* List is shown when hovering */
+  max-height: 0;
+  /* Initially hide the list */
+  overflow: hidden;
+  /* Hide any overflowed content */
+  transition: max-height 1s ease;
+  /* Smooth transition for showing list */
 }
 
-.container .about-text {
-  width: 50%;
-  padding: 20px;
-  /* text-align: left; */
+.hover-box:hover .hover-list {
+  max-height: 600px;
+  /* Adjust this to allow space for the entire list */
+}
+
+.hover-list li {
+  padding: 8px;
+  text-align: center;
+  opacity: 0;
+  /* Initially hide each list item */
+  transition: opacity 0.3s ease;
+}
+
+.hover-box:hover .hover-list li {
+  opacity: 1;
+  /* Show each list item smoothly */
+}
+
+.hover-list li:hover {
+  background-color: #f0f0f0;
+  /* Optional: highlight on hover */
 }
 
 
 /* carousel 2 Section */
 
+#carousel-2 {
+  margin: 5% 0;
+}
+
 .carousel {
-  width: 100%; /* Width of carousel */
-  height: 166px; /* Height of carousel */
-  display: flex; /* Set inline elements */
-  align-items: center; /* Centering elements */
+  width: 100%;
+  /* Width of carousel */
+  height: 166px;
+  /* Height of carousel */
+  display: flex;
+  /* Set inline elements */
+  align-items: center;
+  /* Centering elements */
 }
 
 .button {
-  position: relative; /* Set button in right position */
-  width: 40px; /* Width of button */
-  height: 40px; /* Height of button */
+  position: relative;
+  /* Set button in right position */
+  width: 40px;
+  /* Width of button */
+  height: 40px;
+  /* Height of button */
   /* Style button */
   background: #127357;
   color: #fff;
@@ -262,46 +319,63 @@ section {
 }
 
 .card-container {
-  width: 100%; /* Width of card container */
-  display: flex; /* Set inline elements */
-  margin: 8px; /* Set margin */
-  overflow-x: auto; /* Set overflow in horizontal scroll */
-  overflow-y: hidden; /* Hidden overflow in vertical scroll */
-  scroll-snap-type: x mandatory; /* Force the scroll to snap to the start of a scroll-snap area */
-  gap: 8px; /* Set gap between cards */
-  flex: 0 0 calc(100% - 16px); /* Set width of card container */
+  width: 100%;
+  /* Width of card container */
+  display: flex;
+  /* Set inline elements */
+  margin: 8px;
+  /* Set margin */
+  overflow-x: auto;
+  /* Set overflow in horizontal scroll */
+  overflow-y: hidden;
+  /* Hidden overflow in vertical scroll */
+  scroll-snap-type: x mandatory;
+  /* Force the scroll to snap to the start of a scroll-snap area */
+  gap: 8px;
+  /* Set gap between cards */
+  flex: 0 0 calc(100% - 16px);
+  /* Set width of card container */
 }
 
 .card-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in Chrome, Safari and Opera */
+  display: none;
+  /* Hide scrollbar in Chrome, Safari and Opera */
 }
 
 .card-2 {
-  min-width: 250px; /* Set min width of card */
-  height: 150px; /* Set height of card */
-  scroll-snap-align: start; /* Set scroll snap */
+  min-width: 250px;
+  /* Set min width of card */
+  height: 150px;
+  /* Set height of card */
+  scroll-snap-align: start;
+  /* Set scroll snap */
   /* Style card */
   display: flex;
   justify-content: center;
   align-items: center;
-  background:#17BF60;
+  background: #17BF60;
   border: 1px solid #4F5873;
   color: #4a544c;
   border-radius: 8px;
 }
 
 .card-2:hover {
-  background: #1ED96F; /* Set background color when hover */
+  background: #1ED96F;
+  /* Set background color when hover */
 }
 
 #button-back {
-  right: calc(100% - 8px); /* For set button in left position */
-  border-radius: 0 50% 50% 0; /* Set border radius */
+  right: calc(100% - 8px);
+  /* For set button in left position */
+  border-radius: 0 50% 50% 0;
+  /* Set border radius */
 }
 
 #button-next {
-  right: 55px; /* For set button in right position */
-  border-radius: 50% 0 0 50%; /* Set border radius */
+  right: 55px;
+  /* For set button in right position */
+  border-radius: 50% 0 0 50%;
+  /* Set border radius */
 }
 
 /* endo of carousel 2 Section */
@@ -343,7 +417,7 @@ footer {
   color: white;
 }
 
-.footer{
+.footer {
   margin: 2rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
@@ -353,24 +427,24 @@ footer {
   padding: 20px;
 }
 
-.footer-box{
+.footer-box {
   display: flex;
   flex-direction: column;
-} 
+}
 
-.footer-box p{
+.footer-box p {
   width: 300px;
   font-size: 0.938rem;
   margin: 0.5rem 0 1rem;
 }
 
-.social{
+.social {
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
 }
 
-.social .bx{
+.social .bx {
   padding: 10px;
   background-color: var(--bg-color);
   color: var(--green-color);
@@ -378,28 +452,28 @@ footer {
   font-size: 20px;
 }
 
-.social .bx:hover{
+.social .bx:hover {
   background-color: var(--green-color);
   color: var(--bg-color);
   transition: 0.2s all linear;
 }
 
-.footer-box h2{
+.footer-box h2 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-.footer-box a{
+.footer-box a {
   color: #868a92;
   margin-bottom: 1rem;
 }
 
-.footer-box a:hover{
+.footer-box a:hover {
   color: var(--light-green-color);
 }
 
-.footer-box form{
+.footer-box form {
   border-bottom: 1px solid var(--text-color);
   padding: 10px;
   display: flex;
@@ -407,23 +481,23 @@ footer {
   column-gap: 0.5rem;
 }
 
-.footer-box form input{
+.footer-box form input {
   background: transparent;
   border: none;
   outline: none;
 }
 
-.footer-box form .bx{
+.footer-box form .bx {
   font-size: 20px;
   color: var(--light-orange-color);
   cursor: pointer;
 }
 
-.footer-box form .bxs-envelope{
+.footer-box form .bxs-envelope {
   color: var(--green-color);
 }
 
-.copyright{
+.copyright {
   text-align: center;
   padding: 20px;
 }
